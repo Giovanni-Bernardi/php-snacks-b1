@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Snack 1</title>
     <style>
+
+    /* CUSTOM FONT */
+    @font-face { font-family:display; src: url('font/display.ttf'); }
+    @font-face { font-family:simbols; src: url('font/simbols.ttf'); } 
+    @font-face { font-family:display; font-weight: bold; src: url('font/display.ttf');}
+    @font-face { font-family:simbols; font-weight: bold; src: url('font/simbols.ttf');}
+
         /* GENERAL RULES */
         * {
         padding: 0;
@@ -13,22 +20,39 @@
         box-sizing: border-box;
         }
 
+        body {
+        background-color: #000;
+        }
+
+        h1 {
+        padding-top: 50px;
+        margin-bottom: 30px;
+        font-size: 3em;
+        color: red;
+        text-align: center;
+        font-family: display, simbols, sans-serif;
+        }
+
         .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 80vh;
         }
 
         .match {
         display: flex;
         flex-wrap: wrap;
-        width: 300px;
+        width: 500px;
+        height: 240px;
         padding: 20px;
         margin: 5px;
-        background-color: red;
-        color: white;
+        color: #fff;
+        font-size: 2em;
+        background-color: #121212;
+        background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.1001freedownloads.com%2Fvector%2Fthumb%2F121047%2Fartonomics-led-signboard.png&f=1&nofb=1");
+        background-size: cover;
         }
 
         .team, .gamepoints {
@@ -36,11 +60,13 @@
         justify-content: center;
         align-items: center;
         flex-basis: 50%;
+        font-family: display, simbols, sans-serif;
         }
 
         .team {
         font-weight: bold;
-        font-size: 25px;
+        font-size: 30px;
+        color: red;
         }
     </style>
 </head>
@@ -56,14 +82,14 @@
         $matches = [
 
             [
-                "home" => "Olimpia Milano",
-                "guest" => "Cantù",
+                "home" => "Olimpia-Milano",
+                "guest" => "Cantu",
                 "HomeGamePoints" => 55,
                 "GuestGamePoints" => 60
             ],
 
             [
-                "home" => "Pistoia Basket",
+                "home" => "Pistoia-Basket",
                 "guest" => "Varese",
                 "HomeGamePoints" => 198,
                 "GuestGamePoints" => 31
@@ -85,13 +111,14 @@
 
             [
                 "home" => "Brindisi",
-                "guest" => "Virtus Roma",
+                "guest" => "Virtus-Roma",
                 "HomeGamePoints" => 86,
                 "GuestGamePoints" => 99
             ],
         ];
     ?>
 
+    <h1>SCOREBOARD</h1>
     <div class="container">
             <?php
 
